@@ -1,0 +1,35 @@
+<table mat-table [dataSource]="dataSource" matSort>
+
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      position
+    </th>
+    <td mat-cell *matCellDef="let swimmer"> {{swimmer.position}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      name
+    </th>
+    <td mat-cell *matCellDef="let swimmer"> {{swimmer.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="time">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+      time
+    </th>
+    <td mat-cell *matCellDef="let swimmer"> {{swimmer.time}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="points">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      points
+    </th>
+    <td mat-cell *matCellDef="let swimmer"> {{swimmer.points}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+
+</table>
+<mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons=""></mat-paginator>
